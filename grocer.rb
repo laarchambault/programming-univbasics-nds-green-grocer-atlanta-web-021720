@@ -118,7 +118,7 @@ binding.pry
 grand_total = 0
 grand_total_i = 0
 while grand_total_i < clearance_applied.length do 
-  grand_total += clearance_applied[grand_total_i][:price]
+  grand_total += clearance_applied[grand_total_i][:price] * clearance_applied[grand_total_i][:count]
   grand_total_i += 1
 end
 
