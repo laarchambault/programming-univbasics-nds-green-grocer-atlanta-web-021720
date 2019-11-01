@@ -89,7 +89,7 @@ def apply_clearance(cart)
   while clearance_i < cart.length do 
     
     if cart[clearance_i][:clearance] == true
-    cart[clearance_i][:price] *= 0.8
+    cart[clearance_i][:price] = cart[clearance_i][:price] - (cart[clearance_i][:price] * 0.2)
     end
     
     clearance_i += 1
@@ -123,7 +123,7 @@ while grand_total_i < clearance_applied.length do
 end
 
 if num_items_in_cart >= 100
-  grand_total *= 0.9
+  grand_total = grand_total - (grand_total * 0.1)
 end
 grand_total
 end
