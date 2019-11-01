@@ -114,7 +114,7 @@ consolidated_cart = consolidate_cart(cart)
 coupons_applied = apply_coupons(consolidated_cart, coupons)
 clearance_applied = apply_clearance(coupons_applied)
 num_items_in_cart = count_cart_items(clearance_applied)
-#binding.pry
+binding.pry
 grand_total = 0
 grand_total_i = 0
 while grand_total_i < clearance_applied.length do 
