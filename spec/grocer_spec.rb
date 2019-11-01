@@ -224,27 +224,27 @@ describe "Grocer" do
 
   describe "#checkout" do
     describe "in base case (no clearance, no coupons)" do
-      # it "calls on #consolidate_cart before calculating the total for one item" do
-      #   cart = [find_item_by_name_in_collection('BEETS', items)]
-      #   expect(checkout(cart, [])).to eq(2.50)
-      # end
+      it "calls on #consolidate_cart before calculating the total for one item" do
+        cart = [find_item_by_name_in_collection('BEETS', items)]
+        expect(checkout(cart, [])).to eq(2.50)
+      end
 
-      # it "calls on #apply_coupons after calling on #consolidate_cart when there is only one item in the cart" do
-      #   cart = [find_item_by_name_in_collection('BEETS', items)]
+      it "calls on #apply_coupons after calling on #consolidate_cart when there is only one item in the cart" do
+        cart = [find_item_by_name_in_collection('BEETS', items)]
 
-      #   expect(checkout(cart, [])).to eq(2.50)
-      # end
+        expect(checkout(cart, [])).to eq(2.50)
+      end
 
-      # it "calls on #apply_clearance after calling on #apply_coupons when there is only one item in the cart and no coupon" do
-      #   cart = [find_item_by_name_in_collection('BEETS', items)]
+      it "calls on #apply_clearance after calling on #apply_coupons when there is only one item in the cart and no coupon" do
+        cart = [find_item_by_name_in_collection('BEETS', items)]
 
-      #   consolidated_cart = consolidate_cart(cart)
-      #   coupon_applied_cart = apply_coupons(consolidated_cart, [])
-      #   clearance_applied_cart = apply_clearance(coupon_applied_cart)
+        consolidated_cart = consolidate_cart(cart)
+        coupon_applied_cart = apply_coupons(consolidated_cart, [])
+        clearance_applied_cart = apply_clearance(coupon_applied_cart)
 
 
-      #   expect(checkout(clearance_applied_cart, [])).to eq(2.50)
-      # end
+        expect(checkout(clearance_applied_cart, [])).to eq(2.50)
+      end
 
       it "calls on #apply_clearance after calling on #apply_coupons with multiple items and one coupon" do
         beer = find_item_by_name_in_collection('BEER', items)
